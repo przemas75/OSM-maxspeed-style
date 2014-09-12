@@ -2,11 +2,60 @@ meta
 {
     title: "Maxspeed ";
     description: "Display highway maxspeed in JOSM";
-    version: "1.0";
+    version: "1.0_2014-09-12";
     author: "przemas75";
-    min-josm-version: "5198";
+    min-josm-version: "7480";
+}
+
+*[maxspeed]::maxspeed_glows { }
+
+*[maxspeed]::maxspeed_glows {
+   object-z-index: -1.0;
+   width: +10;
+   opacity: 0.6;
+   linecap: none
 }
 
 
-way[highway][maxspeed=20]
-{  color: #FF7F50; }
+way[highway][maxspeed=10]::maxspeed_glows {
+   color: #0000FF;
+}
+way[highway][maxspeed=20]::maxspeed_glows {
+   color: #0099FF;
+}
+way[highway][maxspeed=30]::maxspeed_glows {
+   color: #00FFFF;
+}
+way[highway][maxspeed=40]::maxspeed_glows {
+   color: #00FFCC;
+}
+way[highway][maxspeed=50]::maxspeed_glows {
+   color: #00FF33;
+}
+way[highway][maxspeed=60]::maxspeed_glows {
+   color: #009900;
+}
+way[highway][maxspeed=70]::maxspeed_glows {
+   color: #66FFFF;
+}
+way[highway][maxspeed=80]::maxspeed_glows {
+   color: #9966FF;
+}
+way[highway][maxspeed=90]::maxspeed_glows {
+   color: #9900CC;
+}
+way[highway][maxspeed=100]::maxspeed_glows {
+   color: #CCCCFF;
+}
+way[highway][maxspeed=110]::maxspeed_glows {
+   color: #FF00FF;
+}
+way[highway][maxspeed=120]::maxspeed_glows {
+   color: #9900CC;
+}
+way[highway][maxspeed=130]::maxspeed_glows {
+   color: #FF9933;
+}
+way[highway][maxspeed=140]::maxspeed_glows {
+   color: #FF3300;
+}
