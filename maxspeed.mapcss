@@ -5,18 +5,131 @@ meta
     version: "1.0_2014-09-12";
     author: "przemas75";
     min-josm-version: "7480";
+
 }
+/*
+   To sa tylko przyklady:
+   color: eval((tag("maxspeed")=10)?#0000FF:eval((tag("maxspeed")=30)?#66FFFF:none)); 
+   dashes: eval((has_tag_key("maxspeed:forward"))?list(20,20):none);
+*/
 
 *[maxspeed]::maxspeed_glows {
    object-z-index: -1.0;
    width: +10;
-   opacity: 0.6;
+   opacity: 0.5;
    linecap: none
 }
-way[highway] {
-   dashes: (eval((has_tag_key("maxspeed:forward"))?list(20,20):none))
+*[maxspeed:forward]::maxspeed_glow1 {
+        width: 3;
+		dashes: list(5);
+		z-index: 2.0;
+		offset: -6;
+}
+*[maxspeed:backward]::maxspeed_glow2 {
+        width: 3;
+		dashes: list(5);
+		z-index: -2.0;
+		offset: 6;
 }
 
+
+/*****************************************************/
+/*   maxspeed:forward                                */
+/*****************************************************/
+
+way[highway][maxspeed:forward=10]::maxspeed_glow1 {
+   color: #0000FF;
+}
+way[highway][maxspeed:forward=20]::maxspeed_glow1 {
+   color: #0099FF;
+}
+way[highway][maxspeed:forward=30]::maxspeed_glow1 {
+   color: #00FFFF;
+}
+way[highway][maxspeed:forward=40]::maxspeed_glow1 {
+   color: #00FFCC;
+}
+way[highway][maxspeed:forward=50]::maxspeed_glow1 {
+   color: #00FF33;
+}
+way[highway][maxspeed:forward=60]::maxspeed_glow1 {
+   color: #009900;
+}
+way[highway][maxspeed:forward=70]::maxspeed_glow1 {
+   color: #66FFFF;
+}
+way[highway][maxspeed:forward=80]::maxspeed_glow1 {
+   color: #9966FF;
+}
+way[highway][maxspeed:forward=90]::maxspeed_glow1 {
+   color: #9900CC;
+}
+way[highway][maxspeed:forward=100]::maxspeed_glow1 {
+   color: #CCCCFF;
+}
+way[highway][maxspeed:forward=110]::maxspeed_glow1 {
+   color: #FF00FF;
+}
+way[highway][maxspeed:forward=120]::maxspeed_glow1 {
+   color: #9900CC;
+}
+way[highway][maxspeed:forward=130]::maxspeed_glow1 {
+   color: #FF9933;
+}
+way[highway][maxspeed:forward=140]::maxspeed_glow1 {
+   color: #FF3300;
+}
+
+/*****************************************************/
+/*   maxspeed:backward                               */
+/*****************************************************/
+
+way[highway][maxspeed:backward=10]::maxspeed_glow2 {
+   color: #0000FF;
+}
+way[highway][maxspeed:backward=20]::maxspeed_glow2 {
+   color: #0099FF;
+}
+way[highway][maxspeed:backward=30]::maxspeed_glow2 {
+   color: #00FFFF;
+}
+way[highway][maxspeed:backward=40]::maxspeed_glow2 {
+   color: #00FFCC;
+}
+way[highway][maxspeed:backward=50]::maxspeed_glow2 {
+   color: #00FF33;
+}
+way[highway][maxspeed:backward=60]::maxspeed_glow2 {
+   color: #009900;
+}
+way[highway][maxspeed:backward=70]::maxspeed_glow2 {
+   color: #66FFFF;
+}
+way[highway][maxspeed:backward=80]::maxspeed_glow2 {
+   color: #9966FF;
+}
+way[highway][maxspeed:backward=90]::maxspeed_glow2 {
+   color: #9900CC;
+}
+way[highway][maxspeed:backward=100]::maxspeed_glow2 {
+   color: #CCCCFF;
+}
+way[highway][maxspeed:backward=110]::maxspeed_glow2 {
+   color: #FF00FF;
+}
+way[highway][maxspeed:backward=120]::maxspeed_glow2 {
+   color: #9900CC;
+}
+way[highway][maxspeed:backward=130]::maxspeed_glow2 {
+   color: #FF9933;
+}
+way[highway][maxspeed:backward=140]::maxspeed_glow2 {
+   color: #FF3300;
+}
+
+/*****************************************************/
+/*   maxspeed                                        */
+/*****************************************************/
 
 way[highway][maxspeed=10]::maxspeed_glows {
    color: #0000FF;
@@ -60,4 +173,3 @@ way[highway][maxspeed=130]::maxspeed_glows {
 way[highway][maxspeed=140]::maxspeed_glows {
    color: #FF3300;
 }
-
