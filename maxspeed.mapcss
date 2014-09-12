@@ -1,0 +1,12 @@
+meta 
+{
+    title: "Maxspeed ";
+    description: "Display highway maxspeed in JOSM";
+    version: "1.0";
+    author: "przemas75";
+    min-josm-version: "5198";
+}
+
+
+way[highway][maxspeed=20]
+{  color: #FF7F50; }
