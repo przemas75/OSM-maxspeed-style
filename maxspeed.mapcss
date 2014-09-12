@@ -7,13 +7,14 @@ meta
     min-josm-version: "7480";
 }
 
-*[maxspeed]::maxspeed_glows { }
-
 *[maxspeed]::maxspeed_glows {
    object-z-index: -1.0;
    width: +10;
    opacity: 0.6;
    linecap: none
+}
+way[highway] {
+   dashes: (eval((has_tag_key("maxspeed:forward"))?list(20,20):none))
 }
 
 
@@ -59,3 +60,4 @@ way[highway][maxspeed=130]::maxspeed_glows {
 way[highway][maxspeed=140]::maxspeed_glows {
    color: #FF3300;
 }
+
